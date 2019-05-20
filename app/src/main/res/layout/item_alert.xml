@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/item_alert_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:drawableLeft="@drawable/ic_notifications_black_24dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#111"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="Example of Security "/>
+            <TextView
+                android:id="@+id/item_alert_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_alert_title"
+                android:padding="10dp"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:textSize="17sp"
+                android:text="This is an example of an security alert from management. Always remember to turn off your phone at filling stations"/>
+
+
+                <TextView
+                    android:id="@+id/item_alert_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/item_alert_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_margin="10dp"
+                    android:text="2/2/2019 8:9:20"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

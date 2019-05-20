@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Desteward Security</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="desteward_intro">The Destewared Security App Helps you to get immediate Help Service from Local Police or Desteward security service during emergency. Simply Press the panic button below to reach our control room in case of emergency.</string>
+</resources>
