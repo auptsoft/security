@@ -1,0 +1,113 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009966"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="70dp"
+        android:text="Messages"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:layout_gravity="left"/>
+
+
+    <LinearLayout
+        android:background="#2DFFFFFF"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="600dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:background="#ffffff"
+            android:text="please do not go to any motor park that is not registered today; you may be; please do not go to any motor park that is not registered today "
+            android:textSize="15sp"
+            android:textColor="#009966"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:text="31/03/2017 5:00pm"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:text="please do not go to any motor park that is not registered today; you may be; please do not go to any motor park that is not registered today "
+        android:textSize="15sp"
+        android:textColor="#009966"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:text="31/03/2017 5:00pm"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:text="please do not go to any motor park that is not registered today; you may be; please do not go to any motor park that is not registered today "
+        android:textSize="15sp"
+        android:textColor="#009966"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:text="31/03/2017 5:00pm"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:text="please do not go to any motor park that is not registered today; you may be; please do not go to any motor park that is not registered today "
+        android:textSize="15sp"
+        android:textColor="#009966"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:text="31/03/2017 5:00pm"
+        android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+</LinearLayout>
