@@ -56,6 +56,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     TextView nameTextView;
     TextView emailTextView;
 
+    View navToogleView;
+
     LocationManager locationManager;
     Criteria criteria = new Criteria();
 
@@ -93,17 +95,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         dashboardFragment = new DashboardFragment();
         profileFragment = new ProfileFragment();
 
-        toolbar = (Toolbar) findViewById(R.id.home_toolbar);
-        drawerLayout = (DrawerLayout) findViewById(R.id.home_drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.drawer_nav);
+        //toolbar = (Toolbar) findViewById(R.id.home_toolbar);
+        drawerLayout = (DrawerLayout) findViewById(R.id.home_drawer);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view_id);
 
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(Gravity.START);
-            }
-        });
+
+
+//        setSupportActionBar(toolbar);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                drawerLayout.openDrawer(Gravity.START);
+//            }
+//        });
+
+
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         ensureSettings();
@@ -128,14 +134,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.dashboard_nav_id:
+                    case R.id.home_id:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.home_main_view, dashboardFragment)
                                 //.addToBackStack("")
                                 .commit();
                         break;
-                    case R.id.profile_nav_id:
+                    case R.id.profile_id:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.home_main_view, profileFragment)
@@ -143,7 +149,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                                 .commit();
                         break;
 
-                    case R.id.messages_nav_id:
+                    case R.id.notification_id:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.home_main_view, AlertsFragment.newInstance(AppState.currentUser.getEmail(), "Messages"))
@@ -151,7 +157,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                                 .commit();
                         break;
 
-                    case R.id.alerts_nav_id:
+                    case R.id.setting_id:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.home_main_view, AlertsFragment.newInstance("", "Alerts"))
@@ -160,12 +166,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
 
-                    case R.id.logout_nav_id:
-                        AppState.sharedPreferences.edit().clear().apply();
-                        Intent intent = new Intent(getBaseContext(), StartupActivity.class);
-                        startActivity(intent);
-                        finish();
-                        break;
+//                    case R.id.logout_nav_id:
+//                        AppState.sharedPreferences.edit().clear().apply();
+//                        Intent intent = new Intent(getBaseContext(), StartupActivity.class);
+//                        startActivity(intent);
+//                        finish();
+//                        break;
                 }
 
                 drawerLayout.closeDrawer(Gravity.START);
