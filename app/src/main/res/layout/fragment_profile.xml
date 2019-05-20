@@ -1,5 +1,4 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
 
         <variable
@@ -30,65 +29,61 @@
             android:text="@{userViewModel.email}"
             android:textColor="#ffffff" />
 
-        <android.support.design.widget.TextInputLayout
+        <TextView
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="#ffffff">
+            android:padding="20dp"
+            android:background="#ffffff"
+            android:text="@{userViewModel.firstName}"
+            android:textSize="20dp"
+            android:textColor="#009966"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="FirstName"
-                android:textColor="#009966" />
+        </TextView>
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
+        <TextView
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="#ffffff">
+            android:padding="20dp"
+            android:background="#ffffff"
+            android:text="@{userViewModel.lastName}"
+            android:textSize="20dp"
+            android:textColor="#009966"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="LastName"
-                android:textColor="#009966" />
+        </TextView>
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
+        <TextView
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="#ffffff">
+            android:padding="20dp"
+            android:background="#ffffff"
+            android:text="@{userViewModel.email}"
+            android:textSize="20dp"
+            android:textColor="#009966"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                android:textColor="#009966" />
+        </TextView>
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
+        <TextView
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="#ffffff">
+            android:padding="20dp"
+            android:background="#ffffff"
+            android:text="@{userViewModel.phoneNumber}"
+            android:textSize="20dp"
+            android:textColor="#009966"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Phone Number"
-                android:textColor="#009966" />
-
-        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 </layout>
+

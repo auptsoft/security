@@ -118,30 +118,26 @@
                     android:text="@={userViewModel.confirmPassword}"/>
             </android.support.design.widget.TextInputLayout>
 
-
-
             <Button
-                android:id="@+id/register_btn"
                 android:layout_width="350dp"
-                android:layout_height="55dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_height="70dp"
                 android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
                 android:background="#009966"
-                android:text="Login"
+                android:text="Register"
                 android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:textColor="#ffffff"/>
 
             <TextView
-                android:id="@+id/login_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Register/Sign up"
-                android:textColor="#009966"
-                android:textSize="20sp" />
-
+                android:layout_gravity="center_horizontal"
+                android:text="Login"
+                android:textSize="20sp"
+                android:textColor="#009966" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </layout>
+
