@@ -20,13 +20,14 @@
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
+                android:layout_marginLeft="50dp"
                 android:layout_weight="6"
                 android:text="Emergency?"
                 android:textSize="35sp"
@@ -48,19 +49,41 @@
             android:orientation="horizontal"
             android:paddingHorizontal="10dp">
 
-            <View
+            <FrameLayout
+                android:src="@drawable/fire_estinguisher"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
-                android:background="#ffffff" />
+                android:background="#ffffff">
 
-            <View
+                <ImageView
+                    android:src="@drawable/police"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:background="#ffffff"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:src="@drawable/fire_estinguisher"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
-                android:background="#ffffff" />
+                android:background="#ffffff">
+
+                <ImageView
+                    android:src="@drawable/fire_estinguisher"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="15dp"
+                    android:background="#ffffff"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
 
         </LinearLayout>
 
@@ -158,7 +181,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="28dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:background="#AE009966"
                 android:gravity="center"
@@ -190,7 +213,7 @@
                 android:layout_gravity="center"/>
 
             <ImageView
-                android:src="@drawable/ic_account_box_black_24dp"
+                android:src="@drawable/ic_person_black_24dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
