@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#009966"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="33dp"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="First Name"
+        android:textColor="#009966"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Last Name"
+        android:textColor="#009966"/>
+
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#009966"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Forgot password?"
+        android:textSize="20sp"
+        android:textColor="#009966" />
+
+</LinearLayout>

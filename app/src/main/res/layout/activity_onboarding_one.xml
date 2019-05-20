@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/scr1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Just one call and we are there"
+        android:textSize="25sp"
+        android:textFontWeight="1000"
+        android:textColor="#ffffff" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#336699"/>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Lets put out the fire even before it starts. Wild fire, Domestic fire, industrial fire, we are always Ready."
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Skip"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:textAlignment="center"
+            android:gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="22dp"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#ffffff"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="5dp"
+                android:background="#ffffff"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="22dp"
+            android:background="#ffffff"/>
+
+    </LinearLayout>
+
+</LinearLayout>
