@@ -5,20 +5,14 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.QuickContactBadge;
 import android.widget.Toast;
 
-import java.io.Console;
 import java.net.HttpURLConnection;
 
 import weplay.auptsoft.locationtracker.HomeActivity;
@@ -26,7 +20,7 @@ import weplay.auptsoft.locationtracker.R;
 import weplay.auptsoft.locationtracker.StartupActivity;
 import weplay.auptsoft.locationtracker.controllers.ServerUtil;
 import weplay.auptsoft.locationtracker.controllers.Utility;
-import weplay.auptsoft.locationtracker.databinding.FramentSignUpBinding;
+import weplay.auptsoft.locationtracker.databinding.FragmentRegisterBinding;
 import weplay.auptsoft.locationtracker.models.AppState;
 import weplay.auptsoft.locationtracker.view_models.UserViewModel;
 
@@ -36,7 +30,7 @@ import weplay.auptsoft.locationtracker.view_models.UserViewModel;
 
 public class SignUpFragment extends Fragment {
 
-    FramentSignUpBinding framentSignUpBinding;
+    FragmentRegisterBinding fragmentRegisterBinding;
 
     UserViewModel userViewModel;
 
@@ -49,27 +43,27 @@ public class SignUpFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        framentSignUpBinding = DataBindingUtil.inflate(inflater, R.layout.frament_sign_up, container, false);
-        View view = framentSignUpBinding.getRoot();
-        framentSignUpBinding.setUserViewModel(userViewModel);
+        fragmentRegisterBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false);
+        View view = fragmentRegisterBinding.getRoot();
+        fragmentRegisterBinding.setUserViewModel(userViewModel);
         //AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
         //appCompatActivity.getSupportActionBar().setTitle("Register");
 
-        framentSignUpBinding.firstNameEdit.addTextChangedListener(textWatcher);
-        framentSignUpBinding.lastNameEdit.addTextChangedListener(textWatcher);
-        framentSignUpBinding.emailEdit.addTextChangedListener(textWatcher);
-        framentSignUpBinding.phoneNumberEdit.addTextChangedListener(textWatcher);
-        framentSignUpBinding.passwordEdit.addTextChangedListener(textWatcher);
-        framentSignUpBinding.confirmPasswordEdit.addTextChangedListener(textWatcher);
+        fragmentRegisterBinding.firstNameEdit.addTextChangedListener(textWatcher);
+        fragmentRegisterBinding.lastNameEdit.addTextChangedListener(textWatcher);
+        fragmentRegisterBinding.emailEdit.addTextChangedListener(textWatcher);
+        fragmentRegisterBinding.phoneNumberEdit.addTextChangedListener(textWatcher);
+        fragmentRegisterBinding.passwordEdit.addTextChangedListener(textWatcher);
+        fragmentRegisterBinding.confirmPasswordEdit.addTextChangedListener(textWatcher);
 
-        framentSignUpBinding.loginTextView.setOnClickListener(new View.OnClickListener(){
+        fragmentRegisterBinding.loginTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 StartupActivity.viewPager.setCurrentItem(1, true);
             }
         });
 
-        framentSignUpBinding.registerBtn.setOnClickListener(new View.OnClickListener(){
+        fragmentRegisterBinding.registerBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 AppState.skipStartup = true;
@@ -107,12 +101,12 @@ public class SignUpFragment extends Fragment {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            framentSignUpBinding.firstNameInputLayout.setError(userViewModel.getFirstNameMsg());
-            framentSignUpBinding.lastNameInputLayout.setError(userViewModel.getLastNameMsg());
-            framentSignUpBinding.emailInputLayout.setError(userViewModel.getEmailErrorMsg());
-            framentSignUpBinding.phoneNumberInputLayout.setError(userViewModel.getPhoneNumberMsg());
-            framentSignUpBinding.passwordInputLayout.setError(userViewModel.getPasswordMsg());
-            framentSignUpBinding.confirmPasswordInputLayout.setError(userViewModel.getConfirmPasswordMsg());
+            fragmentRegisterBinding.firstNameInputLayout.setError(userViewModel.getFirstNameMsg());
+            fragmentRegisterBinding.lastNameInputLayout.setError(userViewModel.getLastNameMsg());
+            fragmentRegisterBinding.emailInputLayout.setError(userViewModel.getEmailErrorMsg());
+            fragmentRegisterBinding.phoneNumberInputLayout.setError(userViewModel.getPhoneNumberMsg());
+            fragmentRegisterBinding.passwordInputLayout.setError(userViewModel.getPasswordMsg());
+            fragmentRegisterBinding.confirmPasswordInputLayout.setError(userViewModel.getConfirmPasswordMsg());
         }
     };
 

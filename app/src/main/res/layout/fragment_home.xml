@@ -1,203 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent"
+    android:background="#009966"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#009966"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="60dp">
+
+        <!--<ImageButton-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:layout_weight="1" />-->
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="6"
+            android:text="Emergency?"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="use the panic buttons"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
+
+        <FrameLayout
+            android:id="@+id/call_police_action"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:src="@drawable/fire_estinguisher">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:background="#ffffff"
+                android:src="@drawable/police" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/call_fire_service_action"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:src="@drawable/fire_estinguisher">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:background="#ffffff"
+                android:src="@drawable/fire_ext1" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/send_location_as_sms_action"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="send Location as SMS"
+        android:textColor="#009966" />
+
+    <TextView
+        android:id="@+id/call_desteward_group_action"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="call DeSteward Services"
+        android:textColor="#009966" />
+
+    <LinearLayout
+        android:id="@+id/location_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="60dp">
+            android:paddingTop="5dp">
 
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="80dp"
                 android:layout_weight="6"
-                android:text="Emergency?"
-                android:textSize="35sp"
-                android:textColor="#ffffff"/>
+                android:text="My Location"
+                android:textColor="#009966"
+                android:textSize="20sp" />
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="use the panic buttons"
-            android:textSize="20sp"
-            android:textColor="#ffffff"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:paddingHorizontal="10dp">
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="150dp"
-                android:layout_margin="15dp"
-                android:layout_weight="1"
-                android:background="#ffffff">
-
-                <ImageView
-                    android:src="@drawable/police"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="15dp"
-                    android:background="#ffffff"
-                    android:layout_gravity="center"/>
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="150dp"
-                android:layout_margin="15dp"
-                android:layout_weight="1"
-                android:background="#ffffff">
-
-                <ImageView
-                    android:src="@drawable/fire_ext1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="15dp"
-                    android:background="#ffffff"
-                    android:layout_gravity="center"/>
-
-            </FrameLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="23dp"
-            android:layout_marginTop="10dp"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:text="send Location as SMS"
-            android:textColor="#009966" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="23dp"
             android:layout_marginTop="20dp"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:text="call DeSteward Services"
-            android:textColor="#009966" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="#ffffff"
-            android:layout_marginHorizontal="23dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_weight="6"
-                    android:text="My Location"
-                    android:textSize="20sp"
-                    android:textColor="#009966"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Address :"
-                    android:textColor="#009966"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="51, Adesuwa road opp Sterling bank"
-                    android:textColor="#009966"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Last Updated :"
-                    android:textColor="#009966"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text=" 5hrs ago"
-                    android:textColor="#009966"/>
-
-            </LinearLayout>
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Address :"
+                android:textColor="#009966" />
+
+            <TextView
+                android:id="@+id/address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="51, Adesuwa road opp Sterling bank"
+                android:textColor="#009966" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Last Updated :"
+                android:textColor="#009966" />
+
+            <TextView
+                android:id="@+id/last_updated_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingRight="10dp"
+                android:text=" 5hrs ago"
+                android:textColor="#009966" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_map_action"
+                android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:background="#AE009966"
                 android:gravity="center"
                 android:text="View Map"
                 android:textColor="#ffffff" />
 
-
+            <TextView
+                android:id="@+id/refresh_and_upload"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="#AE009966"
+                android:gravity="center"
+                android:text="Refresh"
+                android:textColor="#ffffff" />
         </LinearLayout>
-
-
     </LinearLayout>
-
-
-    <android.support.design.widget.NavigationView
-        android:layout_width="250dp"
-        android:layout_height="400dp"
-        app:menu="@menu/nav_menu"
-        android:layout_gravity="start">
-    </android.support.design.widget.NavigationView>
-
-</android.support.v4.widget.DrawerLayout>
+</LinearLayout>
