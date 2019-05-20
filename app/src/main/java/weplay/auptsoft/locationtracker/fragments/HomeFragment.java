@@ -49,7 +49,7 @@ import weplay.auptsoft.locationtracker.models.LocationData;
  * Created by Andrew on 5.2.19.
  */
 
-public class DashboardFragment extends Fragment implements  View.OnClickListener {
+public class HomeFragment extends Fragment implements  View.OnClickListener {
 
     View showMap, refresh, upload;
     AVLoadingIndicatorView loadingIndicatorView;
@@ -62,13 +62,13 @@ public class DashboardFragment extends Fragment implements  View.OnClickListener
     TextView addressView, latLongView, lastUpdatedView;
 
     View callPoliceView, callFireService, reportEmergencyView, sendLocationAsSMSView,
-          callDesteward, viewProfile, viewMessages;
+          callDesteward;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         locationManager = (LocationManager)getContext().getSystemService(Context.LOCATION_SERVICE);
 
         /*AppCompatActivity appCompatActivity = (AppCompatActivity)getA,ctivity();
@@ -77,25 +77,23 @@ public class DashboardFragment extends Fragment implements  View.OnClickListener
 
         ((HomeActivity)getActivity()).toolbar.setTitle("Desteward Security");
 
-        showMap = view.findViewById(R.id.dashboard_show_map);
-        refresh = view.findViewById(R.id.dashboard_refresh);
-        upload = view.findViewById(R.id.dashboard_upload);
-        workInBackground = (Switch)view.findViewById(R.id.dashboard_work_in_background_switch);
-        loadingIndicatorView = (AVLoadingIndicatorView)view.findViewById(R.id.dashboard_loader_indicator);
-        locationView = (View)view.findViewById(R.id.dashboard_location_view);
+        showMap = view.findViewById(R.id.view_map_action);
+        refresh = view.findViewById(R.id.refresh_and_upload);
+        //upload = view.findViewById(R.id.dashboard_upload);
+        //workInBackground = (Switch)view.findViewById(R.id.dashboard_work_in_background_switch);
+        //loadingIndicatorView = (AVLoadingIndicatorView)view.findViewById(R.id.dashboard_loader_indicator);
+        locationView = (View)view.findViewById(R.id.location_view);
 
-        callPoliceView = view.findViewById(R.id.call_police);
+        callPoliceView = view.findViewById(R.id.call_police_action);
         //reportEmergencyView = view.findViewById(R.id.report_emergency);
-        callFireService = view.findViewById(R.id.call_fire_service);
-        sendLocationAsSMSView = view.findViewById(R.id.send_location_as_sms);
-        callDesteward = view.findViewById(R.id.call_desteward);
-        viewProfile = view.findViewById(R.id.view_profile);
-        viewMessages = view.findViewById(R.id.about);
+        callFireService = view.findViewById(R.id.call_fire_service_action);
+        sendLocationAsSMSView = view.findViewById(R.id.send_location_as_sms_action);
+        callDesteward = view.findViewById(R.id.call_desteward_group_action);
 
 
-        addressView = (TextView)view.findViewById(R.id.dashoard_address_view);
+        addressView = (TextView)view.findViewById(R.id.address_text);
         //latLongView = (TextView)view.findViewById(R.id.dashboard_latitude_longitude_view);
-        lastUpdatedView = (TextView)view.findViewById(R.id.dashboard_last_updated_view);
+        lastUpdatedView = (TextView)view.findViewById(R.id.last_updated_text);
 
         showMap.setOnClickListener(this);
         refresh.setOnClickListener(this);
@@ -106,8 +104,9 @@ public class DashboardFragment extends Fragment implements  View.OnClickListener
         //reportEmergencyView.setOnClickListener(this);
         sendLocationAsSMSView.setOnClickListener(this);
         callDesteward.setOnClickListener(this);
-        viewProfile.setOnClickListener(this);
-        viewMessages.setOnClickListener(this);
+
+//        viewProfile.setOnClickListener(this);
+//        viewMessages.setOnClickListener(this);
 
 
         boolean bw = AppState.sharedPreferences.getBoolean(AppState.WORK_IN_BACKGROUND_PREF, false);
@@ -304,18 +303,18 @@ public class DashboardFragment extends Fragment implements  View.OnClickListener
             Intent intent = new Intent(Intent.ACTION_DIAL, uri);
             //intent.putExtra("sms_body", message);
             startActivity(intent);
-        } else if (view.equals(viewProfile)) {
-            ((HomeActivity)getActivity()).getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.home_main_view, new ProfileFragment())
-                    .addToBackStack("")
-                    .commit();
-        } else if (view.equals(viewMessages)) {
-            ((HomeActivity)getActivity()).getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.home_main_view, AlertsFragment.newInstance(AppState.currentUser.getEmail()
-                            , "Messages"))
-                    .addToBackStack("")
-                    .commit();
-        }
+        } //else if (view.equals(viewProfile)) {
+//            ((HomeActivity)getActivity()).getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.home_main_view, new ProfileFragment())
+//                    .addToBackStack("")
+//                    .commit();
+//        } else if (view.equals(viewMessages)) {
+//            ((HomeActivity)getActivity()).getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.home_main_view, AlertsFragment.newInstance(AppState.currentUser.getEmail()
+//                            , "Messages"))
+//                    .addToBackStack("")
+//                    .commit();
+//        }
     }
 
     public void updateView() {

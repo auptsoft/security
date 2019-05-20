@@ -27,7 +27,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
-import android.text.method.CharacterPickerDialog;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,11 +35,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import weplay.auptsoft.locationtracker.controllers.BackService;
 import weplay.auptsoft.locationtracker.controllers.BackgroundService;
 import weplay.auptsoft.locationtracker.controllers.ServerUtil;
 import weplay.auptsoft.locationtracker.fragments.AlertsFragment;
-import weplay.auptsoft.locationtracker.fragments.DashboardFragment;
+import weplay.auptsoft.locationtracker.fragments.HomeFragment;
 import weplay.auptsoft.locationtracker.fragments.ProfileFragment;
 import weplay.auptsoft.locationtracker.models.AppState;
 import weplay.auptsoft.locationtracker.models.User;
@@ -50,7 +48,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
-    DashboardFragment dashboardFragment;
+    HomeFragment homeFragment;
     ProfileFragment profileFragment;
 
     TextView nameTextView;
@@ -92,7 +90,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_home);
 
-        dashboardFragment = new DashboardFragment();
+        homeFragment = new HomeFragment();
         profileFragment = new ProfileFragment();
 
         //toolbar = (Toolbar) findViewById(R.id.home_toolbar);
@@ -137,7 +135,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     case R.id.home_id:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.home_main_view, dashboardFragment)
+                                .replace(R.id.home_main_view, homeFragment)
                                 //.addToBackStack("")
                                 .commit();
                         break;
@@ -180,8 +178,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         View navigationHeader = navigationView.getHeaderView(0);
-        nameTextView = (TextView) navigationHeader.findViewById(R.id.header_name_id);
-        emailTextView = (TextView) navigationHeader.findViewById(R.id.header_email_id);
+        //nameTextView = (TextView) navigationHeader.findViewById(R.id.header_name_id);
+        //emailTextView = (TextView) navigationHeader.findViewById(R.id.header_email_id);
 
         nameTextView.setText(AppState.currentUser.getFirstName() + " " + AppState.currentUser.getLastName());
         emailTextView.setText(AppState.currentUser.getEmail());
@@ -304,7 +302,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationManager.requestSingleUpdate(provider, locationListener, null);
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.home_main_view, dashboardFragment)
+                    .replace(R.id.home_main_view, homeFragment)
                     .commit();
         } else {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,

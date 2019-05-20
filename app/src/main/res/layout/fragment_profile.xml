@@ -1,115 +1,94 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#009966"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userViewModel"
+            type="weplay.auptsoft.locationtracker.view_models.UserViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#009966"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
-            android:text="Andrew James"
-            android:textSize="30sp"
+            android:text="@{userViewModel.lastName + ` ` + userViewModel.firstName}"
             android:textColor="#ffffff"
-            android:layout_gravity="center_horizontal"/>
+            android:textSize="30sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Andrewjames@gmail.com"
-        android:textColor="#ffffff"
-        android:layout_gravity="center_horizontal"/>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:background="#ffffff"
-        android:layout_gravity="center_horizontal">
-
-        <EditText
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="FirstName"
-            android:textColor="#009966"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="@{userViewModel.email}"
+            android:textColor="#ffffff" />
 
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="#ffffff">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="FirstName"
+                android:textColor="#009966" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="LastName"
-            android:textColor="#009966"/>
+        </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-    android:layout_marginTop="20dp"
-    android:background="#ffffff"
-        android:layout_gravity="center_horizontal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="LastName"
+                android:textColor="#009966" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:textColor="#009966"/>
+        </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:background="#ffffff"
-        android:layout_gravity="center_horizontal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColor="#009966" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Phone Number"
-            android:textColor="#009966"/>
+        </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:textColor="#009966" />
 
-
-        <ImageView
-            android:src="@drawable/ic_home_black_24dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:src="@drawable/ic_notifications_active_black_24dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:src="@drawable/ic_person_black_24dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>
