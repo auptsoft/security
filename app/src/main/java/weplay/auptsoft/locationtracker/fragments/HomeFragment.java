@@ -111,6 +111,8 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
 
         boolean bw = AppState.sharedPreferences.getBoolean(AppState.WORK_IN_BACKGROUND_PREF, false);
         //workInBackground.setChecked(bw);
+
+        AppState.sharedPreferences.edit().putBoolean(AppState.WORK_IN_BACKGROUND_PREF, true).apply();
         if (bw) getActivity().startService(new Intent(getContext(), BackService.class));
 
         /*workInBackground.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -172,7 +174,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
 
                 @Override
                 public void onError(String errorString) {
-                    addressView.setText("Could not get current address. Check your internet connection and tap on REFRESH");
+                    addressView.setText("Could not get current address. Check your internet connection.");
                 }
             });
         }

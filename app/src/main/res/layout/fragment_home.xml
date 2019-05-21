@@ -110,7 +110,7 @@
     <LinearLayout
         android:id="@+id/location_view"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="20dp"
         android:background="#ffffff"
@@ -121,12 +121,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="5dp">
-
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:visibility="invisible"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -134,7 +134,6 @@
                 android:layout_marginLeft="80dp"
                 android:layout_weight="6"
                 android:text="My Location"
-                android:textColor="#009966"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -211,7 +210,8 @@
                 android:background="#AE009966"
                 android:gravity="center"
                 android:text="Refresh"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
