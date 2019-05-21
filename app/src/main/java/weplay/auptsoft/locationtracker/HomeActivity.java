@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     TextView nameTextView;
     TextView emailTextView;
 
-    View navToogleView;
+    View navToggleView;
 
     LocationManager locationManager;
     Criteria criteria = new Criteria();
@@ -68,6 +68,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public static String SENT = "SENT", DELIVERED = "DELIVERED";
 
     public static PendingIntent sentPendingIntent, deliveredPendingIntent;
+
+    View homeBottomMenu, profileBottomMenu, notificationBottomMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,21 +157,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                                 .commit();
                         break;
 
-                    case R.id.setting_id:
+                    /*case R.id.setting_id:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.home_main_view, AlertsFragment.newInstance("", "Alerts"))
                                 .addToBackStack("")
                                 .commit();
+                        break; */
+
+
+                    case R.id.logout_id:
+                        AppState.sharedPreferences.edit().clear().apply();
+                        Intent intent = new Intent(getBaseContext(), StartupActivity.class);
+                        startActivity(intent);
+                        finish();
                         break;
-
-
-//                    case R.id.logout_nav_id:
-//                        AppState.sharedPreferences.edit().clear().apply();
-//                        Intent intent = new Intent(getBaseContext(), StartupActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                        break;
                 }
 
                 drawerLayout.closeDrawer(Gravity.START);
@@ -181,11 +183,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //nameTextView = (TextView) navigationHeader.findViewById(R.id.header_name_id);
         //emailTextView = (TextView) navigationHeader.findViewById(R.id.header_email_id);
 
-        nameTextView.setText(AppState.currentUser.getFirstName() + " " + AppState.currentUser.getLastName());
-        emailTextView.setText(AppState.currentUser.getEmail());
-
-        nameTextView.setOnClickListener(this);
-        emailTextView.setOnClickListener(this);
+//        nameTextView.setText(AppState.currentUser.getFirstName() + " " + AppState.currentUser.getLastName());
+//        emailTextView.setText(AppState.currentUser.getEmail());
+//
+//        nameTextView.setOnClickListener(this);
+//        emailTextView.setOnClickListener(this);
 
         //startLocationService();
 
@@ -194,6 +196,26 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //startJobInBackground();
 
         //startService(new Intent(this, BackService.class));
+
+        navToggleView = findViewById(R.id.nav_menu_toggle);
+        navToggleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(drawerLayout.isDrawerOpen(Gravity.START)) {
+                    drawerLayout.closeDrawer(Gravity.START);
+                } else {
+                    drawerLayout.openDrawer(Gravity.START);
+                }
+            }
+        });
+
+        homeBottomMenu = findViewById(R.id.home_bottom_menu);
+        profileBottomMenu = findViewById(R.id.profile_bottom_menu);
+        notificationBottomMenu = findViewById(R.id.notification_bottom_menu);
+
+        homeBottomMenu.setOnClickListener(this);
+        profileBottomMenu.setOnClickListener(this);
+        notificationBottomMenu.setOnClickListener(this);
 
     }
 
@@ -252,8 +274,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     .addToBackStack("")
                     .commit();
             drawerLayout.closeDrawer(Gravity.START);
+        } else if (view.equals(homeBottomMenu)) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.home_main_view, homeFragment)
+                    .addToBackStack("")
+                    .commit();
+        }else if (view.equals(profileBottomMenu)) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.home_main_view, profileFragment)
+                    .addToBackStack("")
+                    .commit();
+        }else if (view.equals(notificationBottomMenu)) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.home_main_view, AlertsFragment.newInstance("", ""))
+                    .addToBackStack("")
+                    .commit();
         }
-        drawerLayout.closeDrawer(Gravity.START);
     }
 
     public void ensureSettings() {

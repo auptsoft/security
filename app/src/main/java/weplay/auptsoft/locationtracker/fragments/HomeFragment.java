@@ -51,10 +51,10 @@ import weplay.auptsoft.locationtracker.models.LocationData;
 
 public class HomeFragment extends Fragment implements  View.OnClickListener {
 
-    View showMap, refresh, upload;
+    View showMap, refresh; // upload;
     AVLoadingIndicatorView loadingIndicatorView;
     View locationView;
-    Switch workInBackground;
+    //Switch workInBackground;
 
     LocationManager locationManager;
 
@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
         appCompatActivity.getSupportActionBar().setTitle("Dashboard"); */
 
 
-        ((HomeActivity)getActivity()).toolbar.setTitle("Desteward Security");
+        //((HomeActivity)getActivity()).toolbar.setTitle("Desteward Security");
 
         showMap = view.findViewById(R.id.view_map_action);
         refresh = view.findViewById(R.id.refresh_and_upload);
@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
 
         showMap.setOnClickListener(this);
         refresh.setOnClickListener(this);
-        upload.setOnClickListener(this);
+//        upload.setOnClickListener(this);
 
         callPoliceView.setOnClickListener(this);
         callFireService.setOnClickListener(this);
@@ -110,9 +110,10 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
 
 
         boolean bw = AppState.sharedPreferences.getBoolean(AppState.WORK_IN_BACKGROUND_PREF, false);
-        workInBackground.setChecked(bw);
+        //workInBackground.setChecked(bw);
         if (bw) getActivity().startService(new Intent(getContext(), BackService.class));
-        workInBackground.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        /*workInBackground.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 AppState.sharedPreferences.edit().putBoolean(AppState.WORK_IN_BACKGROUND_PREF, b).apply();
@@ -127,7 +128,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
                 Toast.makeText(getContext(), outText, Toast.LENGTH_LONG).show();
 
             }
-        });
+        }); */
 
         getContext().registerReceiver(receiver, new IntentFilter(AppState.LOCATION_UPDATE_BROADCAST));
 
@@ -210,7 +211,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
                 }
                 refresh();
             }
-        } else if (view.equals(upload)) {
+        } /*else if (view.equals(upload)) {
             if (!(AppState.currentLocationData == null)) {
                 //loadingIndicatorView.setIndicator(new BallClipRotateIndicator());
                 loadingIndicatorView.setVisibility(View.VISIBLE);
@@ -235,10 +236,10 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
                         Snackbar.make(locationView, "Error occurred while uploading", Snackbar.LENGTH_LONG).show();
                     }
                 });
-            } else {
+            }  else {
                 Toast.makeText(getContext(), "Location not gotten. Tap on refresh", Toast.LENGTH_LONG).show();
             }
-        } else if (view.equals(callPoliceView) || view.equals(callFireService)) {
+        } */ else if (view.equals(callPoliceView) || view.equals(callFireService)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
             LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);

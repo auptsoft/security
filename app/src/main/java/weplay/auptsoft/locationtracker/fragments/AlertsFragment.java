@@ -56,23 +56,25 @@ public class AlertsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_alerts, container, false);
+        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+
 
         /*AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
         appCompatActivity.getSupportActionBar().setTitle(title); */
 
-        ((HomeActivity)getActivity()).toolbar.setTitle(title);
+        //((HomeActivity)getActivity()).toolbar.setTitle(title);
 
-        alertsRecyclerView = (RecyclerView)view.findViewById(R.id.alert_recycler_view);
-        noMessagesView = (TextView)view.findViewById(R.id.no_message_text_view);
-        noMessagesView.setText("No "+title);
+//        alertsRecyclerView = (RecyclerView)view.findViewById(R.id.alert_recycler_view);
+//        noMessagesView = (TextView)view.findViewById(R.id.no_message_text_view);
+//        noMessagesView.setText("No "+title);
 
         //initializeTestData();
 
         initializeData();
 
 
-        swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh_view);
+        //
+        // swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh_view);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

@@ -30,6 +30,7 @@ public class StartupActivity extends AppCompatActivity{
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Let's get Started...");
 
         viewPager = (ViewPager)findViewById(R.id.startup_view_pager);
         tabLayout = (TabLayout)findViewById(R.id.startup_tab);
@@ -41,7 +42,7 @@ public class StartupActivity extends AppCompatActivity{
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 //Toast.makeText(getBaseContext(), tab.getText(), Toast.LENGTH_SHORT).show();
-                getSupportActionBar().setTitle(tab.getText());
+                //getSupportActionBar().setTitle(tab.getText());
             }
 
             @Override

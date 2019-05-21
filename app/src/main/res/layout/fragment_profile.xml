@@ -6,11 +6,13 @@
             type="weplay.auptsoft.locationtracker.view_models.UserViewModel" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#009966"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +83,7 @@
             android:textSize="20dp"
             android:textColor="#009966"
             android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal" />
 
 
     </LinearLayout>

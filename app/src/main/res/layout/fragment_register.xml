@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
@@ -18,7 +19,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp" >
+            android:paddingRight="20dp"
+            android:paddingBottom="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -119,8 +121,9 @@
             </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:id="@+id/register_btn"
             android:layout_width="350dp"
-            android:layout_height="70dp"
+            android:layout_height="55dp"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:background="#009966"
@@ -130,6 +133,7 @@
             android:textColor="#ffffff"/>
 
         <TextView
+            android:id="@+id/login_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

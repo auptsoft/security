@@ -40,12 +40,12 @@ public class ProfileFragment extends Fragment {
         /*AppCompatActivity appCompatActivity = (AppCompatActivity)getActivity();
         appCompatActivity.getSupportActionBar().setTitle("Profile"); */
 
-        ((HomeActivity)getActivity()).toolbar.setTitle("User Profile");
+        //((HomeActivity)getActivity()).toolbar.setTitle("User Profile");
 
         UserViewModel userViewModel = new UserViewModel(user);
         fragmentProfileBinding.setUserViewModel(userViewModel);
 
-        fragmentProfileBinding.logoutBtn.setOnClickListener(new View.OnClickListener(){
+        /*fragmentProfileBinding.logoutBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 AppState.sharedPreferences.edit().clear();
@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
                 getActivity().finish();
             }
-        });
+        }); */
 
         return view;
     }
