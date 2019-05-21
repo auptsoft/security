@@ -70,17 +70,17 @@ public class AlertsFragment extends Fragment {
 
         //initializeTestData();
 
-        initializeData();
+        //initializeData();
 
 
         //
         // swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh_view);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                initializeData();
-            }
-        });
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                initializeData();
+//            }
+//        });
 
 
         return view;

@@ -342,7 +342,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
 
     public void refresh() {
         locationView.setVisibility(View.GONE);
-        loadingIndicatorView.setVisibility(View.VISIBLE);
+        //loadingIndicatorView.setVisibility(View.VISIBLE);
         Snackbar.make(locationView, "refreshing...", Snackbar.LENGTH_INDEFINITE).show();
         locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
     }
