@@ -13,7 +13,7 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimary</item>
     <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@drawable/scr2</item>
+        <item name="android:windowBackground">@drawable/welcome _scr</item>
     </style>
 
     <style name="AppThemeDialog" parent="@android:style/Theme.Holo.Light.Dialog">
